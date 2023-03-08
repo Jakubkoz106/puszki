@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text>PUCHA</title>
+    <link rel="stylesheet" href="/css/puszka-view.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&amp;effect=shadow-multiple">
+</head>
+<body>
+<h1>Puszka</h1>
+<div class="container">
+    <div class="image-container">
+        <img class="rs" th:src="'/'+${puszka.sciezka}" style='height: 100%; width: 100%; object-fit: contain'/>
+    </div>
+
+    <div class="description-container">
+        <h2>Skład</h2>
+        <ul>
+            <li th:text = "'Firma: ' + ${puszka.firma}">FIRMA</li>
+            <li th:text = "'Kolor: ' + ${puszka.kolor}">KOLOR</li>
+            <li th:if="${puszka.smak} != null" th:text = "'Smak: ' + ${puszka.smak}">SMAK</li>
+            <li th:if="${puszka.pojemnosc} != 0" th:text = "'Pojemność: ' + ${puszka.pojemnosc} + 'ml'">POJEMNOSC</li>
+            <li th:if="${puszka.skladnik_dod1} != null" th:text = "${puszka.skladnik_dod1}">SKLADNIK_DOD1</li>
+            <li th:if="${puszka.skladnik_dod2} != null" th:text = "${puszka.skladnik_dod2}">SKLADNIK_DOD2</li>
+            <li th:if="${puszka.skladnik_dod3} != null" th:text = "${puszka.skladnik_dod3}">SKLADNIK_DOD3</li>
+            <li th:if="${puszka.skladnik_dod4} != null" th:text = "${puszka.skladnik_dod4}">SKLADNIK_DOD4</li>
+            <li th:if="${puszka.skladnik_dod5} != null" th:text = "${puszka.skladnik_dod5}">SKLADNIK_DOD5</li>
+            <li th:if="${puszka.skladnik_dod6} != null" th:text = "${puszka.skladnik_dod6}">SKLADNIK_DOD6</li>
+            <li th:if="${puszka.skladnik_dod7} != null" th:text = "${puszka.skladnik_dod7}">SKLADNIK_DOD7</li>
+            <li th:if="${puszka.skladnik_dod8} != null" th:text = "${puszka.skladnik_dod8}">SKLADNIK_DOD8</li>
+            <li th:if="${puszka.skladnik_dod9} != null" th:text = "${puszka.skladnik_dod9}">SKLADNIK_DOD9</li>
+            <li th:if="${puszka.skladnik_dod10} != null" th:text = "${puszka.skladnik_dod10}">SKLADNIK_DOD10</li>
+        </ul>
+    </div>
+</div>
+<div>
+    <div class="button">
+        <a href="/">Powrót</a>
+    </div>
+</div>
+</body>
+</html>

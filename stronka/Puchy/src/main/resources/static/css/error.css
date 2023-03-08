@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #b20015;
+    opacity: 1;
+    background-image:  linear-gradient(30deg, #dd3400 12%, transparent 12.5%, transparent 87%, #dd3400 87.5%, #dd3400),
+    linear-gradient(150deg, #dd3400 12%, transparent 12.5%, transparent 87%, #dd3400 87.5%, #dd3400),
+    linear-gradient(30deg, #dd3400 12%, transparent 12.5%, transparent 87%, #dd3400 87.5%, #dd3400),
+    linear-gradient(150deg, #dd3400 12%, transparent 12.5%, transparent 87%, #dd3400 87.5%, #dd3400),
+    linear-gradient(60deg, #dd340077 25%, transparent 25.5%, transparent 75%, #dd340077 75%, #dd340077),
+    linear-gradient(60deg, #dd340077 25%, transparent 25.5%, transparent 75%, #dd340077 75%, #dd340077);
+    background-size: 46px 81px;
+    background-position: 0 0, 0 0, 23px 40px, 23px 40px, 0 0, 23px 40px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Rancho', serif;
+    font-size: 5em;
+    text-shadow: 2px 2px 2px #222;
+    color: #ffffff;
+    margin: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.button {
+    margin: auto;
+    max-width: 100px;
+    max-height: 50px;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    background-color: #b41601;
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Rancho', serif;
+}
+
+.button:hover, .button:focus {
+    background-color: #e82e0b;
+}
+
+

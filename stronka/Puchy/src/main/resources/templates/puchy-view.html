@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PUCHY</title>
+    <link rel="stylesheet" href="css/puchy-view.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&amp;effect=shadow-multiple">
+</head>
+<body>
+<h1>PUCHY</h1>
+<div>
+    <label class="filter-label" for="firma">Firma:</label>
+
+    <select name="firma" id="firma">
+        <option value="nd">-</option>
+        <option value="black">Black</option>
+        <option value="komodo">Komodo</option>
+        <option value="monster">Monster</option>
+        <option value="redbull">RedBull</option>
+        <option value="rockstar">Rockstar</option>
+    </select>
+
+    <label class="filter-label" for="kolor">Kolor:</label>
+
+    <select name="kolor" id="kolor">
+        <option value="nd">-</option>
+        <option value="biały">biały</option>
+        <option value="czarny">czarny</option>
+        <option value="fioletowy">fioletowy</option>
+        <option value="niebieski">niebieski</option>
+        <option value="pomarańczowy">pomarańczowy</option>
+        <option value="różowy">różowy</option>
+        <option value="zielony">zielony</option>
+    </select>
+
+
+    <input id="filterButton" class="favorite styled" type="button" value="Filtruj" onclick="myFilterFunction()">
+</div>
+<div class="puszka" th:each = "puszka : ${listPuszka}">
+    <a class="button edit-link" th:href="@{'/puchy/' + ${puszka.id_puszki}}">
+    <img class="rs" th:src="${puszka.sciezka}" style='height: 100%; width: 100%; object-fit: contain'/></a>
+    <p class="quasi-hidden" th:text = "${puszka.firma} + ' ' + ${puszka.kolor}">AAA</p>
+</div>
+
+<script>
+    function myFilterFunction() {
+        var firma, puchy, puszka, puszkaText, i, kolor;
+        firma = document.getElementById("firma").value;
+        kolor = document.getElementById("kolor").value;
+        console.log(firma);
+
+        puchy = document.getElementsByClassName("puszka");
+        for (i = 0; i < puchy.length; i++) {
+            puszka = puchy[i];
+            puszkaText = puszka.innerText;
+            let puszka_split = puszkaText.trim().toUpperCase().split(' ');
+            if (puszka_split[0] === firma.toUpperCase() || firma === "nd") {
+                if (puszka_split[1] === kolor.toUpperCase() || kolor === "nd"){
+                    puszka.style.display = "";
+                }
+                else {
+                    puszka.style.display = "none";
+                }
+            }
+            else {
+                puszka.style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

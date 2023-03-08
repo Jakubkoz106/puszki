@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>PUCHY</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="/css/table_view.css">
+  <link rel="icon" href="/golden_python.jpg">
+  <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+  <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+  <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="site">
+  <header>
+    <h1>Puchy</h1>
+  </header>
+
+  <!--    <input type="text" id="filterInput" onkeyup="filterTable()" placeholder="Szukaj..">-->
+  <!--Table -->
+  <table id="myTable">
+    <!--Table header -->
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Firma</th>
+      <th>Kolor</th>
+      <th>Pojemność</th>
+      <th>Kofeina</th>
+      <th>Guarana</th>
+      <th>Tauryna</th>
+      <th>Składnik_dod1</th>
+      <th>Składnik_dod2</th>
+      <th>Składnik_dod3</th>
+      <th>Składnik_dod4</th>
+      <th>Składnik_dod5</th>
+      <th>Składnik_dod6</th>
+      <th>Sciezka</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "puszka : ${listPuszka}">
+      <td th:text = "${puszka.id_puszki}">ID</td>
+      <td th:text = "${puszka.firma}">FIRMA</td>
+      <td th:text = "${puszka.kolor}">KOLOR</td>
+      <td th:text = "${puszka.pojemnosc}">POJEMNOSC</td>
+      <td th:text = "${puszka.kofeina}">KOFEINA</td>
+      <td th:text = "${puszka.guarana}">GUARANA</td>
+      <td th:text = "${puszka.tauryna}">TAURYNA</td>
+      <td th:text = "${puszka.skladnik_dod1}">SKLADNIK_DOD1</td>
+
+<!--      <td>-->
+<!--        <a class="button edit-link" th:href="@{'/edit/adresy/' + ${adres.id_adresu}}">Edytuj</a>-->
+<!--        &nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <a class="button delete-link" th:href="@{'/delete/adresy/' + ${adres.id_adresu}}">Usuń</a>-->
+<!--      </td>-->
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+</body>
+</html>
